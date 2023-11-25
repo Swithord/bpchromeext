@@ -21,14 +21,19 @@ async function shouldRedirect() {
     } else {
       const storedTime = result.time;
 
+      console.log(storedTime)
+
       // Check if the stored time is within the past 12 hours
       if (currentTime - storedTime <= 12 * 60 * 60 * 1000) {
+        console.log("shouldRedirect: false, let's watch netflix!")
         return false;
       } else {
+        console.log("shouldRedirect: true, last time is more than 12 hours")
         return true;
       }
     }
   });
+  console.log("shouldRedirect: true")
   return true;
 }
 
