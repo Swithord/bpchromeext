@@ -9,5 +9,7 @@
   "permissions": [
     "webRequest", "webRequestBlocking", "*://*.netflix.com/*", "storage"
   ],
-  "options_page": "popup.html"
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
 }
