@@ -39,6 +39,7 @@ async function shouldRedirect() {
 
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
+    chrome.storage.sync.get(['count', 'time'], compareValues);
     if (shouldRedirect()) { // Assuming this is your function to check if blocking is active
       return {redirectUrl: "https://leetcode.com"}; // Redirect to LeetCode
     }
