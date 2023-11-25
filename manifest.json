@@ -7,7 +7,7 @@
     "persistent": true
   },
   "permissions": [
-    "webRequest", "webRequestBlocking", "*://*.netflix.com/*"
+    "webRequest", "webRequestBlocking", "*://*.netflix.com/*", "storage"
   ],
   "options_page": "popup.html"
 }
