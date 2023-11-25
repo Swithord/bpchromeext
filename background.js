@@ -8,6 +8,16 @@ chrome.webRequest.onBeforeRequest.addListener(
   ["blocking"]
 );
 
+// Event listener for setting username
+window.addEventListener('load', function() {
+  document.getElementById("submit").addEventListener("click", function() {
+      var username = document.getElementById("username").value;
+      chrome.storage.sync.set({'username': username}, function() {
+          console.log('Set username to ' + username);
+      });
+  });
+});
+
 
 function redirectToLeetcode(callback) {
   // Get the current time in milliseconds
@@ -94,6 +104,4 @@ async function getLeetCodeTotalSolved() {
     console.error('API Error:', error);
     return null;
   }
-}
-  
-      
+}      
