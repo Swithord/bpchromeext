@@ -7,3 +7,7 @@ chrome.webRequest.onBeforeRequest.addListener(
   {urls: ["*://*.netflix.com/*"]},
   ["blocking"]
 );
+
+function shouldRedirect(){
+  return true;
+}
