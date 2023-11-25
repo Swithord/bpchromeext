@@ -9,7 +9,7 @@ window.addEventListener('load', function() {
 });
 
 
-async function shouldRedirect() {
+function shouldRedirect() {
   // Get the current time in milliseconds
   const currentTime = new Date().getTime();
 
@@ -40,7 +40,9 @@ async function shouldRedirect() {
 chrome.webRequest.onBeforeRequest.addListener(
   function(details) {
     chrome.storage.sync.get(['count', 'time'], compareValues);
-    if (shouldRedirect()) { // Assuming this is your function to check if blocking is active
+    const result = shouldRedirect();
+    console.log('redirect returned' + result);
+    if (result == true) { // Assuming this is your function to check if blocking is active
       return {redirectUrl: "https://leetcode.com"}; // Redirect to LeetCode
     }
   },
