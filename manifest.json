@@ -4,10 +4,10 @@
   "version": "1.0",
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
   "permissions": [
     "webRequest", "webRequestBlocking", "*://*.netflix.com/*"
   ],
-  "options_page": "options.html"
+  "options_page": "popup.html"
 }

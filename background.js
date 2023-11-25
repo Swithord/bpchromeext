@@ -14,12 +14,11 @@ function redirectToLeetcode(callback) {
   const currentTime = new Date().getTime();
 
   // Retrieve data from chrome.storage
-  chrome.storage.local.get(['count', 'time'], function(result) {
+  chrome.storage.local.get(['time'], function(result) {
     if (chrome.runtime.lastError) {
       console.error(chrome.runtime.lastError);
       callback(false);
     } else {
-      const count = result.count;
       const storedTime = result.time;
 
       // Check if the stored time is within the past 12 hours
